@@ -7,14 +7,14 @@ class Subscriber:
         self.clients = []
 
     def addClient(self, id, client):
-        if id is int and client in str:
+        if type(id) is int and type(client) is str:
             self.clients.append({'id': id, 'client': client})
             return self.clients
         else:
             raise TypeError('error')
 
     def deleteClient(self, id):
-        if id is int:
+        if type(id) is int:
             for i in self.clients:
                 if i['id'] == id:
                     self.clients.remove(i)
